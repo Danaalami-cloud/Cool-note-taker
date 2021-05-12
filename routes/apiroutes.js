@@ -7,5 +7,6 @@ module.exports = (app) => {
     app.get('/api/newnotes', (req, res) => res.json(newNotes));
 
     app.post('/api/newNotes', (req, res) => {
-        if (newNotes.length)
-    }
+
+    })
+};
