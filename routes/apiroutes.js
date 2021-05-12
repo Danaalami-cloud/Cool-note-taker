@@ -6,7 +6,11 @@ router.get("/api/notes", (req, res) =>
     res.json(notes);
   })
 );
-router.post("/api/notes", (req, res) => console.log("post notes called"));
+router.post("/api/notes", (req, res) => 
+  dbNotes.addNewNote(req.body).then((note) => {
+      res.json(note);
+  })
+);
 
 router.delete("/api/notes/:id", (req, res) => {
   console.log("delete notes called");
