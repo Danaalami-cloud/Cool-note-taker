@@ -1,12 +1,12 @@
-const existingNotes = require('../data/existingNotes');
-const newNotes = require('../data/newNotes');
-const fs = require('fs');
+
+const dbNotes = require("../db/dbNotes");
+
 
 module.exports = (app) => {
-    app.get('/api/existing', (req, res) => res.json(existingNotes));
-    app.get('/api/newnotes', (req, res) => res.json(newNotes));
+  app.get("/api/notes", (req, res) => console.log("Get notes called"));
+  app.post("/api/notes", (req, res) => console.log("post notes called"));
 
-    app.post('/api/newNotes', (req, res) => {
-
-    })
+  app.delete("/api/notes/:id", (req, res) => {
+    console.log("delete notes called");
+  });
 };
