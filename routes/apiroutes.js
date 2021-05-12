@@ -13,7 +13,7 @@ router.post("/api/notes", (req, res) =>
 );
 
 router.delete("/api/notes/:id", (req, res) => {
-  console.log("delete notes called");
+  dbNotes.deleteNote(req.params.id).then(() => res.json({Delete: "Successful"}))
 });
 
 module.exports = router;

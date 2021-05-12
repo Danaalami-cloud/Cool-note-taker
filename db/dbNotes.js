@@ -47,6 +47,10 @@ class dbNotes {
       })
       .then(() => noteObject);
   }
+
+  deleteNote(id){
+      return this.getAllNotes().then((notes) => notes.filter((note) => note.id !== id)).then((filteredArray) => this.writeDb(filteredArray))
+  }
 }
 
 module.exports = new dbNotes();
